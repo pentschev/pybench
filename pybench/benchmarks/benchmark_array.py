@@ -58,8 +58,7 @@ def test_slicing(benchmark, module, shape):
 
 
 @pytest.mark.parametrize('module', ['numpy', 'cupy'])
-#@pytest.mark.parametrize('shape', [(1000, 1000), (10000, 10000)])
-@pytest.mark.parametrize('shape', [(1000, 1000), (2000, 2000), (3000, 3000)])
+@pytest.mark.parametrize('shape', [(500, 500), (1000, 1000)])
 def test_svd(benchmark, module, shape):
     m = importlib.import_module(module)
 
