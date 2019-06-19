@@ -7,10 +7,12 @@ from pybench import run_benchmark
 
 @pytest.mark.parametrize('module', ['pandas', 'cudf'])
 @pytest.mark.parametrize('data_path', ['/datasets/nyc_taxi/2015/yellow_tripdata_2015-01.csv'])
-def test_read_csv(benchmark, module, data_path):
+@pytest.mark.parametrize('nrows', [10000000])
+def test_read_csv(benchmark, module, data_path, nrows):
     m = importlib.import_module(module)
 
-    run_benchmark(benchmark, m, m.read_csv, lambda data: data, data_path)
+    compute_func = lambda data: m.read_csv(data['path'], nrows=data['nrows'])
+    run_benchmark(benchmark, m, compute_func, lambda data: data, {'path': data_path, 'nrows': nrows})
 
 
 @pytest.mark.parametrize('module', ['pandas', 'cudf'])
