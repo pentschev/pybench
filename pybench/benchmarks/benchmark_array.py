@@ -54,7 +54,7 @@ def test_Matrix_Multiplication(benchmark, module, shape):
 def test_Array_Slicing(benchmark, module, shape):
     m = importlib.import_module(module)
 
-    compute_func = lambda data: data[::3]
+    compute_func = lambda data: data[::3].copy()
     run_benchmark(benchmark, m, compute_func, m.random.random, shape)
 
 

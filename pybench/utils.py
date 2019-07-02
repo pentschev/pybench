@@ -16,6 +16,11 @@ def filter_by_value_in_column(df, col, val):
     return df.loc[df[col] == val]
 
 
+def significant_round(x, precision):
+    r = float(f'%.{precision - 1}e' % x)
+    return r if r < 10.0 else round(r)
+
+
 def split_params_list(df, params_name, columns=None):
     lst = df[params_name].to_list()
     lst = [[l] if not isinstance(l, list) else l for l in lst]
