@@ -8,6 +8,33 @@ def benchmark_json_to_pandas(path):
     return pd.io.json.json_normalize(data=data['benchmarks'])
 
 
+def compute_speedup(slow_df, fast_df, match_list, stats_param, label_list=None):
+    res = []
+    for k, v in slow_df.items():
+        for idx, row in v.iterrows():
+            match_dict = {}
+            n = v
+            c = fast_df[k]
+            for m in match_list:
+                n = filter_by_value_in_column(n, m, row[m])
+                c = filter_by_value_in_column(c, m, row[m])
+                match_dict[m] = row[m]
+
+            label_dict = {}
+            if label_list is not None:
+                for l in label_list:
+                    label_dict[l] = row[l]
+
+            n_med = n.iloc[0][stats_param]
+            c_med = c.iloc[0][stats_param]
+
+            res.append(pd.DataFrame(
+                {'operation': [k], 'speedup': n_med / c_med, **match_dict, **label_dict}
+            ))
+
+    return pd.concat(res, ignore_index=True)
+
+
 def filter_by_string_in_column(df, col, val):
     return df.loc[df[col].str.contains(val)]
 
