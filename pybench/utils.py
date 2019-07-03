@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+import warnings
 
 
 def benchmark_json_to_pandas(path):
@@ -11,7 +12,7 @@ def benchmark_json_to_pandas(path):
 def compute_speedup(slow_df, fast_df, match_list, stats_param, label_list=None):
     res = []
     for k, v in slow_df.items():
-        for idx, row in v.iterrows():
+        for _, row in v.iterrows():
             match_dict = {}
             n = v
             c = fast_df[k]
@@ -25,12 +26,19 @@ def compute_speedup(slow_df, fast_df, match_list, stats_param, label_list=None):
                 for l in label_list:
                     label_dict[l] = row[l]
 
-            n_med = n.iloc[0][stats_param]
-            c_med = c.iloc[0][stats_param]
+            if c.shape[0] == 0 or n.shape[0] == 0:
+                empty_row = "slow" if n.shape[0] == 0 else "fast"
+                message = "row for operation {0} with {1} not found on {2} dataframe, skipping operation".format(
+                    k, str(match_dict), empty_row
+                )
+                warnings.warn(message, RuntimeWarning)
+            else:
+                n_med = n.iloc[0][stats_param]
+                c_med = c.iloc[0][stats_param]
 
-            res.append(pd.DataFrame(
-                {'operation': [k], 'speedup': n_med / c_med, **match_dict, **label_dict}
-            ))
+                res.append(pd.DataFrame(
+                    {'operation': [k], 'speedup': n_med / c_med, **match_dict, **label_dict}
+                ))
 
     return pd.concat(res, ignore_index=True)
 
