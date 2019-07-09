@@ -6,6 +6,10 @@ import numpy as np
 
 from pybench import run_benchmark
 
+_shapes = {
+        'small': [(int(2 ** 14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)],
+        'large': [(int(2 ** 20), 512), (int(2 ** 21), 512), (int(2 ** 22), 512)],
+}
 
 def load_data(nrows, ncols, cached, train_split=1.0, label_col=None):
     import gzip
@@ -73,7 +77,7 @@ def load_mortgage(d):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['large'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_PCA(benchmark, module, shape, data):
     if module == 'sklearn':
@@ -97,7 +101,7 @@ def test_PCA(benchmark, module, shape, data):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['small'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_DBSCAN(benchmark, module, shape, data):
     if module == 'sklearn':
@@ -113,6 +117,7 @@ def test_DBSCAN(benchmark, module, shape, data):
 
         if data['module'] == 'sklearn':
             kwargs['n_jobs'] = -1
+            kwargs['algorithm'] = 'brute'
 
         dbscan = m.DBSCAN(**kwargs)
 
@@ -122,7 +127,7 @@ def test_DBSCAN(benchmark, module, shape, data):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['large'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_TSVD(benchmark, module, shape, data):
     if module == 'sklearn':
@@ -149,7 +154,7 @@ def test_TSVD(benchmark, module, shape, data):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['small'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_KNN(benchmark, module, shape, data):
     if module == 'sklearn':
@@ -177,7 +182,7 @@ def test_KNN(benchmark, module, shape, data):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['large'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_SGD(benchmark, module, shape, data):
     if module == 'sklearn':
@@ -216,7 +221,7 @@ def test_SGD(benchmark, module, shape, data):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['large'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_LinearRegression(benchmark, module, shape, data):
     if module == 'sklearn':
@@ -245,7 +250,7 @@ def test_LinearRegression(benchmark, module, shape, data):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['large'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_Ridge(benchmark, module, shape, data):
     if module == 'sklearn':
@@ -275,7 +280,7 @@ def test_Ridge(benchmark, module, shape, data):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['large'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_Lasso(benchmark, module, shape, data):
     if module == 'sklearn':
@@ -305,7 +310,7 @@ def test_Lasso(benchmark, module, shape, data):
 
 
 @pytest.mark.parametrize('module', ['sklearn', 'cuml'])
-@pytest.mark.parametrize('shape', [(int(2**14), 512), (int(2 ** 15), 512), (int(2 ** 16), 512)])
+@pytest.mark.parametrize('shape', _shapes['large'])
 @pytest.mark.parametrize('data', ['data/mortgage.npy.gz'])
 def test_ElasticNet(benchmark, module, shape, data):
     if module == 'sklearn':
