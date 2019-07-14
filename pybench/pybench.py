@@ -5,7 +5,7 @@ import importlib
 
 def run_sync(m, func, *args):
     res = func(*args)
-    if m.__name__ == 'cupy':
+    if m.__name__ == "cupy":
         m.cuda.Device().synchronize()
     return res
 

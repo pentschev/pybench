@@ -6,7 +6,7 @@ import warnings
 def benchmark_json_to_pandas(path):
     data = json.load(open(path))
 
-    return pd.io.json.json_normalize(data=data['benchmarks'])
+    return pd.io.json.json_normalize(data=data["benchmarks"])
 
 
 def compute_speedup(slow_df, fast_df, match_list, stats_param, label_list=None):
@@ -36,9 +36,16 @@ def compute_speedup(slow_df, fast_df, match_list, stats_param, label_list=None):
                 n_med = n.iloc[0][stats_param]
                 c_med = c.iloc[0][stats_param]
 
-                res.append(pd.DataFrame(
-                    {'operation': [k], 'speedup': n_med / c_med, **match_dict, **label_dict}
-                ))
+                res.append(
+                    pd.DataFrame(
+                        {
+                            "operation": [k],
+                            "speedup": n_med / c_med,
+                            **match_dict,
+                            **label_dict,
+                        }
+                    )
+                )
 
     return pd.concat(res, ignore_index=True)
 
@@ -52,7 +59,7 @@ def filter_by_value_in_column(df, col, val):
 
 
 def significant_round(x, precision):
-    r = float(f'%.{precision - 1}e' % x)
+    r = float(f"%.{precision - 1}e" % x)
     return r if r < 10.0 else round(r)
 
 
@@ -61,6 +68,6 @@ def split_params_list(df, params_name, columns=None):
     lst = [[l] if not isinstance(l, list) else l for l in lst]
     ncols = max([len(l) for l in lst])
     if columns is None:
-        columns = [params_name + '.' + str(i) for i in range(ncols)]
+        columns = [params_name + "." + str(i) for i in range(ncols)]
     split_param = pd.DataFrame(lst, columns=columns)
-    return df.join(split_param, how='outer')
+    return df.join(split_param, how="outer")
