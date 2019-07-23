@@ -1,0 +1,2002 @@
+{
+    "machine_info": {
+        "node": "dgx06",
+        "processor": "x86_64",
+        "machine": "x86_64",
+        "python_compiler": "GCC 7.3.0",
+        "python_implementation": "CPython",
+        "python_implementation_version": "3.7.3",
+        "python_version": "3.7.3",
+        "python_build": [
+            "default",
+            "Mar 27 2019 22:11:17"
+        ],
+        "release": "4.4.0-134-generic",
+        "system": "Linux",
+        "cpu": {
+            "vendor_id": "GenuineIntel",
+            "hardware": "unknown",
+            "brand": "Intel(R) Xeon(R) CPU E5-2698 v4 @ 2.20GHz"
+        }
+    },
+    "commit_info": {
+        "id": "unversioned",
+        "time": null,
+        "author_time": null,
+        "dirty": false,
+        "project": "benchmark",
+        "branch": "(unknown)"
+    },
+    "benchmarks": [
+        {
+            "group": null,
+            "name": "test_FFT[shape0-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_FFT[shape0-numpy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape0-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.015926487743854523,
+                "max": 0.0231921523809433,
+                "mean": 0.01786285825073719,
+                "stddev": 0.003005450066525882,
+                "rounds": 5,
+                "median": 0.01667035184800625,
+                "iqr": 0.0022090384736657143,
+                "q1": 0.016357298009097576,
+                "q3": 0.01856633648276329,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.015926487743854523,
+                "hd15iqr": 0.0231921523809433,
+                "ops": 55.98208226047646,
+                "total": 0.08931429125368595,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_FFT[shape0-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_FFT[shape0-cupy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape0-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0028001759201288223,
+                "max": 0.00378374382853508,
+                "mean": 0.0031680513173341753,
+                "stddev": 0.0003822600466488625,
+                "rounds": 5,
+                "median": 0.0031464025378227234,
+                "iqr": 0.00046847062185406685,
+                "q1": 0.002879980020225048,
+                "q3": 0.003348450642079115,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.0028001759201288223,
+                "hd15iqr": 0.00378374382853508,
+                "ops": 315.65145252807065,
+                "total": 0.015840256586670876,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_FFT[shape1-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_FFT[shape1-numpy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape1-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 2.4781503807753325,
+                "max": 2.595076123252511,
+                "mean": 2.5236991941928864,
+                "stddev": 0.047411168292396055,
+                "rounds": 5,
+                "median": 2.509213950484991,
+                "iqr": 0.07095951680094004,
+                "q1": 2.4871943732723594,
+                "q3": 2.5581538900732994,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 2.4781503807753325,
+                "hd15iqr": 2.595076123252511,
+                "ops": 0.39624373709078814,
+                "total": 12.618495970964432,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_FFT[shape1-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_FFT[shape1-cupy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape1-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.011504219844937325,
+                "max": 0.021903082728385925,
+                "mean": 0.014134976640343666,
+                "stddev": 0.004387110489467755,
+                "rounds": 5,
+                "median": 0.012104932218790054,
+                "iqr": 0.003532764036208391,
+                "q1": 0.011845523957163095,
+                "q3": 0.015378287993371487,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.011504219844937325,
+                "hd15iqr": 0.021903082728385925,
+                "ops": 70.74649116474853,
+                "total": 0.07067488320171833,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_FFT[shape2-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_FFT[shape2-numpy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape2-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 11.144022736698389,
+                "max": 11.623323410749435,
+                "mean": 11.392104172334076,
+                "stddev": 0.18765016718275324,
+                "rounds": 5,
+                "median": 11.454693680629134,
+                "iqr": 0.27309209015220404,
+                "q1": 11.236302610952407,
+                "q3": 11.509394701104611,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 11.144022736698389,
+                "hd15iqr": 11.623323410749435,
+                "ops": 0.08778009618526116,
+                "total": 56.960520861670375,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_FFT[shape2-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_FFT[shape2-cupy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape2-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.041427476331591606,
+                "max": 0.3656723815947771,
+                "mean": 0.10918039865791798,
+                "stddev": 0.14347302968480855,
+                "rounds": 5,
+                "median": 0.04347776807844639,
+                "iqr": 0.09016240574419498,
+                "q1": 0.04155291710048914,
+                "q3": 0.13171532284468412,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.041427476331591606,
+                "hd15iqr": 0.3656723815947771,
+                "ops": 9.159153220654392,
+                "total": 0.5459019932895899,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Sum[shape0-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Sum[shape0-numpy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape0-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0003325454890727997,
+                "max": 0.00033731386065483093,
+                "mean": 0.00033403858542442323,
+                "stddev": 1.9205513653509587e-06,
+                "rounds": 5,
+                "median": 0.0003335699439048767,
+                "iqr": 2.0889565348625183e-06,
+                "q1": 0.00033272430300712585,
+                "q3": 0.00033481325954198837,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.0003325454890727997,
+                "hd15iqr": 0.00033731386065483093,
+                "ops": 2993.6661321009324,
+                "total": 0.001670192927122116,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Sum[shape0-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Sum[shape0-cupy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape0-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0007502604275941849,
+                "max": 0.0007925890386104584,
+                "mean": 0.0007652115076780319,
+                "stddev": 1.6142916522965858e-05,
+                "rounds": 5,
+                "median": 0.0007614884525537491,
+                "iqr": 1.5028752386569977e-05,
+                "q1": 0.0007559866644442081,
+                "q3": 0.0007710154168307781,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.0007502604275941849,
+                "hd15iqr": 0.0007925890386104584,
+                "ops": 1306.828229798077,
+                "total": 0.0038260575383901596,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Sum[shape1-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Sum[shape1-numpy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape1-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.06339371204376221,
+                "max": 0.06385886669158936,
+                "mean": 0.06357953920960427,
+                "stddev": 0.00021467097897409737,
+                "rounds": 5,
+                "median": 0.06347178108990192,
+                "iqr": 0.00037623802199959755,
+                "q1": 0.06340845441445708,
+                "q3": 0.06378469243645668,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.06339371204376221,
+                "hd15iqr": 0.06385886669158936,
+                "ops": 15.728330409933845,
+                "total": 0.3178976960480213,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Sum[shape1-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Sum[shape1-cupy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape1-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.08224401623010635,
+                "max": 0.0824232492595911,
+                "mean": 0.08236680775880814,
+                "stddev": 7.474315911078443e-05,
+                "rounds": 5,
+                "median": 0.08239874057471752,
+                "iqr": 9.753042832016945e-05,
+                "q1": 0.08232265524566174,
+                "q3": 0.0824201856739819,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.08224401623010635,
+                "hd15iqr": 0.0824232492595911,
+                "ops": 12.140812873654948,
+                "total": 0.4118340387940407,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Sum[shape2-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Sum[shape2-numpy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape2-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.2537069655954838,
+                "max": 0.297112051397562,
+                "mean": 0.26485396847128867,
+                "stddev": 0.01823185299104271,
+                "rounds": 5,
+                "median": 0.25788580253720284,
+                "iqr": 0.015119808726012707,
+                "q1": 0.2546293563209474,
+                "q3": 0.2697491650469601,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.2537069655954838,
+                "hd15iqr": 0.297112051397562,
+                "ops": 3.7756655328666686,
+                "total": 1.3242698423564434,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Sum[shape2-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Sum[shape2-cupy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape2-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.33112137764692307,
+                "max": 0.331932008266449,
+                "mean": 0.3315243162214756,
+                "stddev": 0.00029055468413033615,
+                "rounds": 5,
+                "median": 0.33151686377823353,
+                "iqr": 0.00030359672382473946,
+                "q1": 0.3313741241581738,
+                "q3": 0.33167772088199854,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.33112137764692307,
+                "hd15iqr": 0.331932008266449,
+                "ops": 3.0163699948089104,
+                "total": 1.657621581107378,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Standard_Deviation[shape0-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Standard_Deviation[shape0-numpy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape0-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.001692064106464386,
+                "max": 0.0017823874950408936,
+                "mean": 0.0017282899469137191,
+                "stddev": 3.7701251786016695e-05,
+                "rounds": 5,
+                "median": 0.0017264839261770248,
+                "iqr": 6.1034224927425385e-05,
+                "q1": 0.0016939821653068066,
+                "q3": 0.001755016390234232,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.001692064106464386,
+                "hd15iqr": 0.0017823874950408936,
+                "ops": 578.6066173593977,
+                "total": 0.008641449734568596,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Standard_Deviation[shape0-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Standard_Deviation[shape0-cupy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape0-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.001509007066488266,
+                "max": 0.0015389509499073029,
+                "mean": 0.0015192534774541855,
+                "stddev": 1.2117118590009906e-05,
+                "rounds": 5,
+                "median": 0.0015149693936109543,
+                "iqr": 1.587904989719391e-05,
+                "q1": 0.0015105577185750008,
+                "q3": 0.0015264367684721947,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.001509007066488266,
+                "hd15iqr": 0.0015389509499073029,
+                "ops": 658.218009594884,
+                "total": 0.007596267387270927,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Standard_Deviation[shape1-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Standard_Deviation[shape1-numpy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape1-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.574815085157752,
+                "max": 0.6251710522919893,
+                "mean": 0.5979275990277528,
+                "stddev": 0.023296792775115014,
+                "rounds": 5,
+                "median": 0.5848537981510162,
+                "iqr": 0.040321888867765665,
+                "q1": 0.5816365950740874,
+                "q3": 0.621958483941853,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.574815085157752,
+                "hd15iqr": 0.6251710522919893,
+                "ops": 1.6724432884951759,
+                "total": 2.9896379951387644,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Standard_Deviation[shape1-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Standard_Deviation[shape1-cupy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape1-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.1671897042542696,
+                "max": 0.1679325383156538,
+                "mean": 0.16747281439602374,
+                "stddev": 0.00030394274151939073,
+                "rounds": 5,
+                "median": 0.1674081850796938,
+                "iqr": 0.0004614396020770073,
+                "q1": 0.16722217714414,
+                "q3": 0.167683616746217,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.1671897042542696,
+                "hd15iqr": 0.1679325383156538,
+                "ops": 5.971118378862943,
+                "total": 0.8373640719801188,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Standard_Deviation[shape2-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Standard_Deviation[shape2-numpy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape2-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 2.3200649358332157,
+                "max": 2.369223752990365,
+                "mean": 2.3441280268132685,
+                "stddev": 0.019133291938932068,
+                "rounds": 5,
+                "median": 2.3481546696275473,
+                "iqr": 0.02825225656852126,
+                "q1": 2.3282337486743927,
+                "q3": 2.356486005242914,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 2.3200649358332157,
+                "hd15iqr": 2.369223752990365,
+                "ops": 0.42659786008337297,
+                "total": 11.720640134066343,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Standard_Deviation[shape2-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Standard_Deviation[shape2-cupy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape2-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.673362335190177,
+                "max": 0.6753023639321327,
+                "mean": 0.6744900744408369,
+                "stddev": 0.0007372323132045621,
+                "rounds": 5,
+                "median": 0.6745749935507774,
+                "iqr": 0.0009695007465779781,
+                "q1": 0.6740523418411613,
+                "q3": 0.6750218425877392,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.673362335190177,
+                "hd15iqr": 0.6753023639321327,
+                "ops": 1.4826015057805202,
+                "total": 3.3724503722041845,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Elementwise[shape0-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Elementwise[shape0-numpy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape0-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.026617567986249924,
+                "max": 0.029473235830664635,
+                "mean": 0.027420247718691827,
+                "stddev": 0.0011605254261645498,
+                "rounds": 5,
+                "median": 0.027000796049833298,
+                "iqr": 0.0008034217171370983,
+                "q1": 0.026863254141062498,
+                "q3": 0.027666675858199596,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.026617567986249924,
+                "hd15iqr": 0.029473235830664635,
+                "ops": 36.46940065090369,
+                "total": 0.13710123859345913,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Elementwise[shape0-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Elementwise[shape0-cupy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape0-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0001752059906721115,
+                "max": 0.0002064276486635208,
+                "mean": 0.00018546245992183684,
+                "stddev": 1.3220547060178701e-05,
+                "rounds": 5,
+                "median": 0.00017872266471385956,
+                "iqr": 1.846998929977417e-05,
+                "q1": 0.0001760777086019516,
+                "q3": 0.00019454769790172577,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.0001752059906721115,
+                "hd15iqr": 0.0002064276486635208,
+                "ops": 5391.92675661398,
+                "total": 0.0009273122996091843,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Elementwise[shape1-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Elementwise[shape1-numpy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape1-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 3.46634354442358,
+                "max": 3.5303472466766834,
+                "mean": 3.5016781017184258,
+                "stddev": 0.02475134362914029,
+                "rounds": 5,
+                "median": 3.498600795865059,
+                "iqr": 0.03506731055676937,
+                "q1": 3.4869647892192006,
+                "q3": 3.52203209977597,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 3.46634354442358,
+                "hd15iqr": 3.5303472466766834,
+                "ops": 0.28557736346732054,
+                "total": 17.50839050859213,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Elementwise[shape1-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Elementwise[shape1-cupy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape1-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.013049282133579254,
+                "max": 0.013068491593003273,
+                "mean": 0.013058235496282577,
+                "stddev": 8.172546513801818e-06,
+                "rounds": 5,
+                "median": 0.0130607970058918,
+                "iqr": 1.353491097688675e-05,
+                "q1": 0.013050181791186333,
+                "q3": 0.01306371670216322,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.013049282133579254,
+                "hd15iqr": 0.013068491593003273,
+                "ops": 76.58002494170674,
+                "total": 0.06529117748141289,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Elementwise[shape2-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Elementwise[shape2-numpy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape2-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 13.901233114302158,
+                "max": 14.357409985736012,
+                "mean": 14.042213675007224,
+                "stddev": 0.18744195876956665,
+                "rounds": 5,
+                "median": 13.9568653665483,
+                "iqr": 0.22053721407428384,
+                "q1": 13.920396746136248,
+                "q3": 14.140933960210532,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 13.901233114302158,
+                "hd15iqr": 14.357409985736012,
+                "ops": 0.07121384299826114,
+                "total": 70.21106837503612,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Elementwise[shape2-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Elementwise[shape2-cupy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape2-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.049035295844078064,
+                "max": 0.051741283386945724,
+                "mean": 0.050107046589255334,
+                "stddev": 0.0009923578773201938,
+                "rounds": 5,
+                "median": 0.049894314259290695,
+                "iqr": 0.0007988098077476025,
+                "q1": 0.04964679479598999,
+                "q3": 0.05044560460373759,
+                "iqr_outliers": 1,
+                "stddev_outliers": 2,
+                "outliers": "2;1",
+                "ld15iqr": 0.049035295844078064,
+                "hd15iqr": 0.051741283386945724,
+                "ops": 19.9572728402323,
+                "total": 0.25053523294627666,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Matrix_Multiplication[shape0-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Matrix_Multiplication[shape0-numpy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape0-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0074485428631305695,
+                "max": 0.009494733065366745,
+                "mean": 0.007893653213977813,
+                "stddev": 0.0008970742793089373,
+                "rounds": 5,
+                "median": 0.007469499483704567,
+                "iqr": 0.0006160405464470387,
+                "q1": 0.00745569821447134,
+                "q3": 0.008071738760918379,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.0074485428631305695,
+                "hd15iqr": 0.009494733065366745,
+                "ops": 126.68405526470733,
+                "total": 0.03946826606988907,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Matrix_Multiplication[shape0-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Matrix_Multiplication[shape0-cupy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape0-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.000399881973862648,
+                "max": 0.0004449766129255295,
+                "mean": 0.0004143994301557541,
+                "stddev": 1.7658061295844556e-05,
+                "rounds": 5,
+                "median": 0.0004083607345819473,
+                "iqr": 1.5358440577983856e-05,
+                "q1": 0.00040496978908777237,
+                "q3": 0.0004203282296657562,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.000399881973862648,
+                "hd15iqr": 0.0004449766129255295,
+                "ops": 2413.1307314398214,
+                "total": 0.0020719971507787704,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Matrix_Multiplication[shape1-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Matrix_Multiplication[shape1-numpy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape1-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 3.2157873827964067,
+                "max": 3.3143977243453264,
+                "mean": 3.260273964703083,
+                "stddev": 0.04332175117182821,
+                "rounds": 5,
+                "median": 3.251712566241622,
+                "iqr": 0.0779478088952601,
+                "q1": 3.222101290244609,
+                "q3": 3.300049099139869,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 3.2157873827964067,
+                "hd15iqr": 3.3143977243453264,
+                "ops": 0.30672268981882056,
+                "total": 16.301369823515415,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Matrix_Multiplication[shape1-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Matrix_Multiplication[shape1-cupy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape1-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.2853471226990223,
+                "max": 0.2856540884822607,
+                "mean": 0.28551409058272836,
+                "stddev": 0.00011449138430816764,
+                "rounds": 5,
+                "median": 0.28553082048892975,
+                "iqr": 0.00014885934069752693,
+                "q1": 0.28544012969359756,
+                "q3": 0.2855889890342951,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.2853471226990223,
+                "hd15iqr": 0.2856540884822607,
+                "ops": 3.5024541099145776,
+                "total": 1.427570452913642,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Matrix_Multiplication[shape2-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Matrix_Multiplication[shape2-numpy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape2-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 22.657715439796448,
+                "max": 22.80374796129763,
+                "mean": 22.75516783669591,
+                "stddev": 0.05926497224910083,
+                "rounds": 5,
+                "median": 22.776668813079596,
+                "iqr": 0.07555805519223213,
+                "q1": 22.721544011030346,
+                "q3": 22.79710206622258,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 22.657715439796448,
+                "hd15iqr": 22.80374796129763,
+                "ops": 0.043946061271732714,
+                "total": 113.77583918347955,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Matrix_Multiplication[shape2-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Matrix_Multiplication[shape2-cupy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape2-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 2.2828131690621376,
+                "max": 2.2981754448264837,
+                "mean": 2.2902968559414147,
+                "stddev": 0.0061608313489181854,
+                "rounds": 5,
+                "median": 2.2894312273710966,
+                "iqr": 0.00992302130907774,
+                "q1": 2.2855612304992974,
+                "q3": 2.295484251808375,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 2.2828131690621376,
+                "hd15iqr": 2.2981754448264837,
+                "ops": 0.4366246224395899,
+                "total": 11.451484279707074,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Array_Slicing[shape0-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Array_Slicing[shape0-numpy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape0-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0001936163753271103,
+                "max": 0.0012385491281747818,
+                "mean": 0.0005177374929189682,
+                "stddev": 0.000472257416012083,
+                "rounds": 5,
+                "median": 0.00019714422523975372,
+                "iqr": 0.0006878888234496117,
+                "q1": 0.00019484292715787888,
+                "q3": 0.0008827317506074905,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.0001936163753271103,
+                "hd15iqr": 0.0012385491281747818,
+                "ops": 1931.480747824673,
+                "total": 0.002588687464594841,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Array_Slicing[shape0-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Array_Slicing[shape0-cupy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape0-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 4.503503441810608e-05,
+                "max": 0.0008199587464332581,
+                "mean": 0.00020708926022052764,
+                "stddev": 0.0003427195284841849,
+                "rounds": 5,
+                "median": 5.451776087284088e-05,
+                "iqr": 0.0002088574692606926,
+                "q1": 4.717102274298668e-05,
+                "q3": 0.0002560284920036793,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 4.503503441810608e-05,
+                "hd15iqr": 0.0008199587464332581,
+                "ops": 4828.8356380002915,
+                "total": 0.0010354463011026382,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Array_Slicing[shape1-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Array_Slicing[shape1-numpy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape1-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.1287232954055071,
+                "max": 0.14355274848639965,
+                "mean": 0.13661031574010848,
+                "stddev": 0.007222588851781881,
+                "rounds": 5,
+                "median": 0.1384766809642315,
+                "iqr": 0.0140101108700037,
+                "q1": 0.12914152024313807,
+                "q3": 0.14315163111314178,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.1287232954055071,
+                "hd15iqr": 0.14355274848639965,
+                "ops": 7.320091419028923,
+                "total": 0.6830515787005424,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Array_Slicing[shape1-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Array_Slicing[shape1-cupy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape1-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0007190406322479248,
+                "max": 0.0019717570394277573,
+                "mean": 0.0009745504707098007,
+                "stddev": 0.0005574846869542946,
+                "rounds": 5,
+                "median": 0.000727606937289238,
+                "iqr": 0.0003226073458790779,
+                "q1": 0.0007204264402389526,
+                "q3": 0.0010430337861180305,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.0007190406322479248,
+                "hd15iqr": 0.0019717570394277573,
+                "ops": 1026.114121387334,
+                "total": 0.004872752353549004,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Array_Slicing[shape2-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Array_Slicing[shape2-numpy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape2-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.5050110593438148,
+                "max": 1.0766380093991756,
+                "mean": 0.6358290635049343,
+                "stddev": 0.24700259926563953,
+                "rounds": 5,
+                "median": 0.5374072771519423,
+                "iqr": 0.16772839287295938,
+                "q1": 0.5113753015175462,
+                "q3": 0.6791036943905056,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.5050110593438148,
+                "hd15iqr": 1.0766380093991756,
+                "ops": 1.5727497489460696,
+                "total": 3.1791453175246716,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Array_Slicing[shape2-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Array_Slicing[shape2-cupy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape2-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.002726888284087181,
+                "max": 0.004359135404229164,
+                "mean": 0.003063470497727394,
+                "stddev": 0.0007243392936083531,
+                "rounds": 5,
+                "median": 0.0027455203235149384,
+                "iqr": 0.0004124022088944912,
+                "q1": 0.00273673003539443,
+                "q3": 0.0031491322442889214,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.002726888284087181,
+                "hd15iqr": 0.004359135404229164,
+                "ops": 326.4271683836486,
+                "total": 0.01531735248863697,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_SVD[shape0-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_SVD[shape0-numpy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape0-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.5056866034865379,
+                "max": 0.5807675775140524,
+                "mean": 0.5455606803297997,
+                "stddev": 0.03135875127004649,
+                "rounds": 5,
+                "median": 0.5415265299379826,
+                "iqr": 0.053137704730033875,
+                "q1": 0.5216714292764664,
+                "q3": 0.5748091340065002,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.5056866034865379,
+                "hd15iqr": 0.5807675775140524,
+                "ops": 1.832976671624291,
+                "total": 2.7278034016489983,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_SVD[shape0-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_SVD[shape0-cupy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape0-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.32755139796063304,
+                "max": 0.6189731300109997,
+                "mean": 0.4026358879636973,
+                "stddev": 0.12293862032613849,
+                "rounds": 5,
+                "median": 0.355432994896546,
+                "iqr": 0.11204727034782991,
+                "q1": 0.32900014967890456,
+                "q3": 0.44104742002673447,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.32755139796063304,
+                "hd15iqr": 0.6189731300109997,
+                "ops": 2.483633550544711,
+                "total": 2.0131794398184866,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_SVD[shape1-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_SVD[shape1-numpy]",
+            "params": {
+                "shape": [
+                    10000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape1-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 9.427876379340887,
+                "max": 9.84389971010387,
+                "mean": 9.6904169742018,
+                "stddev": 0.1849387328521285,
+                "rounds": 5,
+                "median": 9.808668738231063,
+                "iqr": 0.28863103967159986,
+                "q1": 9.529021507594734,
+                "q3": 9.817652547266334,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 9.427876379340887,
+                "hd15iqr": 9.84389971010387,
+                "ops": 0.10319473379342071,
+                "total": 48.45208487100899,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_SVD[shape1-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_SVD[shape1-cupy]",
+            "params": {
+                "shape": [
+                    10000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape1-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.5874800530727953,
+                "max": 1.1610741430195048,
+                "mean": 0.7023597454419359,
+                "stddev": 0.25642917431766066,
+                "rounds": 5,
+                "median": 0.5877820680616423,
+                "iqr": 0.14348690171027556,
+                "q1": 0.5876242473023012,
+                "q3": 0.7311111490125768,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.5874800530727953,
+                "hd15iqr": 1.1610741430195048,
+                "ops": 1.423771801401836,
+                "total": 3.51179872720968,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_SVD[shape2-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_SVD[shape2-numpy]",
+            "params": {
+                "shape": [
+                    20000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape2-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 30.160747077316046,
+                "max": 40.624478347599506,
+                "mean": 35.80652727298438,
+                "stddev": 4.417399317719254,
+                "rounds": 5,
+                "median": 35.786258317530155,
+                "iqr": 7.658937987405807,
+                "q1": 32.19161641784012,
+                "q3": 39.85055440524593,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 30.160747077316046,
+                "hd15iqr": 40.624478347599506,
+                "ops": 0.0279278689155228,
+                "total": 179.03263636492193,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_SVD[shape2-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_SVD[shape2-cupy]",
+            "params": {
+                "shape": [
+                    20000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape2-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.9520289519568905,
+                "max": 1.204440581961535,
+                "mean": 1.004320345958695,
+                "stddev": 0.11188877076883695,
+                "rounds": 5,
+                "median": 0.9559007919160649,
+                "iqr": 0.06616468497668393,
+                "q1": 0.9524381257360801,
+                "q3": 1.018602810712764,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.9520289519568905,
+                "hd15iqr": 1.204440581961535,
+                "ops": 0.9956982391364673,
+                "total": 5.021601729793474,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Stencil[shape0-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Stencil[shape0-numpy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape0-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0026846323162317276,
+                "max": 0.0029738489538431168,
+                "mean": 0.0028050497174263002,
+                "stddev": 0.00010745670640384304,
+                "rounds": 5,
+                "median": 0.0027817171066999435,
+                "iqr": 0.0001235692761838436,
+                "q1": 0.002739919349551201,
+                "q3": 0.0028634886257350445,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.0026846323162317276,
+                "hd15iqr": 0.0029738489538431168,
+                "ops": 356.49992005044527,
+                "total": 0.0140252485871315,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Stencil[shape0-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Stencil[shape0-cupy]",
+            "params": {
+                "shape": [
+                    1000,
+                    1000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape0-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.0005377009510993958,
+                "max": 0.0006063021719455719,
+                "mean": 0.0005647409707307816,
+                "stddev": 3.490710905967255e-05,
+                "rounds": 5,
+                "median": 0.0005413759499788284,
+                "iqr": 6.252992898225784e-05,
+                "q1": 0.0005386075936257839,
+                "q3": 0.0006011375226080418,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 0.0005377009510993958,
+                "hd15iqr": 0.0006063021719455719,
+                "ops": 1770.7233082557975,
+                "total": 0.0028237048536539078,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Stencil[shape1-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Stencil[shape1-numpy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape1-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.6012441422790289,
+                "max": 0.6117634158581495,
+                "mean": 0.6062471624463797,
+                "stddev": 0.004121610232466621,
+                "rounds": 5,
+                "median": 0.6058350820094347,
+                "iqr": 0.006352190859615803,
+                "q1": 0.6030972888693213,
+                "q3": 0.6094494797289371,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.6012441422790289,
+                "hd15iqr": 0.6117634158581495,
+                "ops": 1.6494922565323287,
+                "total": 3.0312358122318983,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Stencil[shape1-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Stencil[shape1-cupy]",
+            "params": {
+                "shape": [
+                    10000,
+                    10000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape1-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.003941470757126808,
+                "max": 0.00414896197617054,
+                "mean": 0.003997179865837097,
+                "stddev": 8.642980896274306e-05,
+                "rounds": 5,
+                "median": 0.0039658211171627045,
+                "iqr": 7.915869355201721e-05,
+                "q1": 0.003945341799408197,
+                "q3": 0.004024500492960215,
+                "iqr_outliers": 1,
+                "stddev_outliers": 1,
+                "outliers": "1;1",
+                "ld15iqr": 0.003941470757126808,
+                "hd15iqr": 0.00414896197617054,
+                "ops": 250.1763827409298,
+                "total": 0.019985899329185486,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Stencil[shape2-numpy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Stencil[shape2-numpy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "numpy"
+            },
+            "param": "shape2-numpy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 2.414307026192546,
+                "max": 2.498639388009906,
+                "mean": 2.4674049995839598,
+                "stddev": 0.0338317273228513,
+                "rounds": 5,
+                "median": 2.476832604035735,
+                "iqr": 0.04743264662101865,
+                "q1": 2.4456192208454013,
+                "q3": 2.49305186746642,
+                "iqr_outliers": 0,
+                "stddev_outliers": 1,
+                "outliers": "1;0",
+                "ld15iqr": 2.414307026192546,
+                "hd15iqr": 2.498639388009906,
+                "ops": 0.4052840940861409,
+                "total": 12.337024997919798,
+                "iterations": 1
+            }
+        },
+        {
+            "group": null,
+            "name": "test_Stencil[shape2-cupy]",
+            "fullname": "pybench/benchmarks/benchmark_array.py::test_Stencil[shape2-cupy]",
+            "params": {
+                "shape": [
+                    20000,
+                    20000
+                ],
+                "module": "cupy"
+            },
+            "param": "shape2-cupy",
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 0.016257507726550102,
+                "max": 0.01651332713663578,
+                "mean": 0.016367347911000252,
+                "stddev": 0.0001074954779583893,
+                "rounds": 5,
+                "median": 0.016384080052375793,
+                "iqr": 0.0001760474406182766,
+                "q1": 0.01626401487737894,
+                "q3": 0.016440062317997217,
+                "iqr_outliers": 0,
+                "stddev_outliers": 2,
+                "outliers": "2;0",
+                "ld15iqr": 0.016257507726550102,
+                "hd15iqr": 0.01651332713663578,
+                "ops": 61.097253228662346,
+                "total": 0.08183673955500126,
+                "iterations": 1
+            }
+        }
+    ],
+    "datetime": "2019-06-19T17:03:11.272677",
+    "version": "3.2.2"
+}

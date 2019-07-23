@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@3.3.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@4"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"axis": {"labelFontSize:": 20, "labelColor": "#666666", "titleFontSize": 20, "titleColor": "#666666"}, "axisY": {"font": "Open Sans", "labelFontSize": 20, "labelColor": "#666666", "titleFontSize": 20, "titleColor": "#666666"}, "axisX": {"font": "Open Sans", "labelFontSize": 0, "labelColor": "#666666", "titleFontSize": 0, "titleColor": "#666666", "tickSize": 0}, "header": {"font": "Open Sans", "labelFontSize": 20, "labelColor": "#666666", "titleFontSize": 20, "titleColor": "#666666", "labelAngle": -20}, "legend": {"font": "Open Sans", "labelFontSize": 18, "labelColor": "#666666", "titleFontSize": 18, "titleColor": "#666666", "strokeColor": "#666666", "padding": 10}, "range": {"category": ["#7400ff", "#36c9dd", "#d216d2", "#ffb500"], "diverging": ["#bababc", "#666666", "#8824ff", "#9942ff", "#a785e7"]}}, "data": {"name": "data-83d4d4297212e613449bf5c5118ff38b"}, "facet": {"column": {"type": "nominal", "field": "name", "sort": {"field": "speedup", "op": "sum", "order": "descending"}, "title": "Operation"}}, "spec": {"layer": [{"mark": {"type": "bar", "opacity": 1.0}, "encoding": {"color": {"type": "nominal", "field": "size", "scale": {"domain": ["800MB", "8MB"]}, "title": "Array Size (MB)"}, "x": {"type": "nominal", "field": "size"}, "y": {"type": "quantitative", "axis": {"tickCount": 5, "title": "GPU Speedup Over CPU"}, "field": "speedup", "scale": {"type": "symlog"}, "stack": null}}, "height": 500, "width": 80}, {"layer": [{"mark": {"type": "text", "dy": -5}, "encoding": {"color": {"type": "nominal", "field": "size", "scale": {"domain": ["800MB", "8MB"]}, "title": "Array Size (MB)"}, "text": {"type": "quantitative", "field": "speedup"}, "x": {"type": "nominal", "field": "size"}, "y": {"type": "quantitative", "axis": {"tickCount": 5, "title": "GPU Speedup Over CPU"}, "field": "speedup", "scale": {"type": "symlog"}, "stack": null}}, "height": 500, "width": 80}, {"mark": {"type": "text", "dy": 7}, "encoding": {"color": {"type": "nominal", "field": "size", "scale": {"domain": ["800MB", "8MB"]}, "title": "Array Size (MB)"}, "text": {"type": "quantitative", "field": "speedup"}, "x": {"type": "nominal", "field": "size"}, "y": {"type": "quantitative", "axis": {"tickCount": 5, "title": "GPU Speedup Over CPU"}, "field": "speedup", "scale": {"type": "symlog"}, "stack": null}}, "height": 500, "width": 80}]}]}, "$schema": "https://vega.github.io/schema/vega-lite/v3.3.0.json", "datasets": {"data-83d4d4297212e613449bf5c5118ff38b": [{"name": "FFT", "shape0": 1000, "shape1": 1000, "stats.median_x": 0.01667035184800625, "stats.median_y": 0.0031464025378227234, "speedup": 5.3, "size": "8MB"}, {"name": "FFT", "shape0": 10000, "shape1": 10000, "stats.median_x": 2.509213950484991, "stats.median_y": 0.012104932218790054, "speedup": 210.0, "size": "800MB"}, {"name": "Sum", "shape0": 1000, "shape1": 1000, "stats.median_x": 0.0003335699439048767, "stats.median_y": 0.0007614884525537491, "speedup": -2.3, "size": "8MB"}, {"name": "Sum", "shape0": 10000, "shape1": 10000, "stats.median_x": 0.06347178108990192, "stats.median_y": 0.08239874057471752, "speedup": -1.3, "size": "800MB"}, {"name": "Standard Deviation", "shape0": 1000, "shape1": 1000, "stats.median_x": 0.0017264839261770248, "stats.median_y": 0.0015149693936109543, "speedup": 1.1, "size": "8MB"}, {"name": "Standard Deviation", "shape0": 10000, "shape1": 10000, "stats.median_x": 0.5848537981510162, "stats.median_y": 0.1674081850796938, "speedup": 3.5, "size": "800MB"}, {"name": "Elementwise", "shape0": 1000, "shape1": 1000, "stats.median_x": 0.027000796049833298, "stats.median_y": 0.00017872266471385956, "speedup": 150.0, "size": "8MB"}, {"name": "Elementwise", "shape0": 10000, "shape1": 10000, "stats.median_x": 3.498600795865059, "stats.median_y": 0.0130607970058918, "speedup": 270.0, "size": "800MB"}, {"name": "Matrix Multiplication", "shape0": 1000, "shape1": 1000, "stats.median_x": 0.007469499483704567, "stats.median_y": 0.0004083607345819473, "speedup": 18.0, "size": "8MB"}, {"name": "Matrix Multiplication", "shape0": 10000, "shape1": 10000, "stats.median_x": 3.251712566241622, "stats.median_y": 0.28553082048892975, "speedup": 11.0, "size": "800MB"}, {"name": "Array Slicing", "shape0": 1000, "shape1": 1000, "stats.median_x": 0.00019714422523975372, "stats.median_y": 5.451776087284088e-05, "speedup": 3.6, "size": "8MB"}, {"name": "Array Slicing", "shape0": 10000, "shape1": 10000, "stats.median_x": 0.1384766809642315, "stats.median_y": 0.000727606937289238, "speedup": 190.0, "size": "800MB"}, {"name": "SVD", "shape0": 1000, "shape1": 1000, "stats.median_x": 0.5415265299379826, "stats.median_y": 0.355432994896546, "speedup": 1.5, "size": "8MB"}, {"name": "SVD", "shape0": 10000, "shape1": 1000, "stats.median_x": 9.808668738231063, "stats.median_y": 0.5877820680616423, "speedup": 17.0, "size": "800MB"}, {"name": "Stencil", "shape0": 1000, "shape1": 1000, "stats.median_x": 0.0027817171066999435, "stats.median_y": 0.0005413759499788284, "speedup": 5.1, "size": "8MB"}, {"name": "Stencil", "shape0": 10000, "shape1": 10000, "stats.median_x": 0.6058350820094347, "stats.median_y": 0.0039658211171627045, "speedup": 150.0, "size": "800MB"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>
