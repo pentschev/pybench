@@ -99,10 +99,6 @@ def filter_by_string_in_column(df, col, val):
     return df.loc[df[col].str.contains(val)]
 
 
-def filter_by_value_in_column(df, col, val):
-    return df.loc[df[col] == val]
-
-
 def significant_round(x, precision):
     r = float(f"%.{precision - 1}e" % x)
     return r if r < 10.0 else round(r)
