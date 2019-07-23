@@ -3,6 +3,25 @@ import pandas as pd
 
 
 def benchmark_json_to_pandas(path):
+    """Convert the json "benchmarks" field of a pytest-benchmark json file into
+    a pandas.DataFrame.
+
+    Parameters
+    ----------
+    path: str
+        path to json file
+
+    Returns
+    -------
+    pandas.DataFrame
+        A pandas DataFrame containing benchmarks extracted from a
+        pytest-benchmark json file
+
+    Example
+    -------
+    >>> benchmarks_df = benchmark_json_to_pandas(
+    >>>     "/path/to/pytest_benchmark.json")
+    """
     data = json.load(open(path))
 
     return pd.io.json.json_normalize(data=data["benchmarks"])
@@ -95,16 +114,89 @@ def compute_speedup(slow_df, fast_df, operation_list, param_list, stats_param):
     return speedup_df
 
 
-def filter_by_string_in_column(df, col, val):
-    return df.loc[df[col].str.contains(val)]
+def filter_by_string_in_column(df, column, value):
+    """Filter pandas DataFrame by value, where value is a subsequence of the
+    of the string contained in a column.
+
+    Parameters
+    ----------
+    df: pandas.DataFrame
+        A pandas DataFrame containing data from pytest-benchmark.
+    column: str
+        Column name where to check for value.
+    value: str
+        String to be checked if is part of column's content.
+
+    Returns
+    -------
+    pandas.DataFrame
+        A pandas DataFrame containing only rows for which value is contained in
+        column content.
+
+    Example
+    -------
+    >>> numpy_df = filter_by_string_in_column(df, 'name', 'numpy')
+    """
+    return df.loc[df[column].str.contains(value)]
 
 
 def significant_round(x, precision):
+    """Round value to specified precision.
+
+    Parameters
+    ----------
+    x: float
+        Value to be rounded
+    precision: int
+        Precision to be used for rounding
+
+    Returns
+    -------
+    float
+        Rounded value
+
+    Examples
+    --------
+    >>> significant_round(5.6789, 1)
+    6.0
+    >>> significant_round(5.6789, 2)
+    5.7
+    >>> significant_round(5.6789, 3)
+    5.68
+    """
     r = float(f"%.{precision - 1}e" % x)
     return r if r < 10.0 else round(r)
 
 
 def split_params_list(df, params_name, columns=None):
+    """Split a parameter list into multiple columns.
+
+    Parameters
+    ----------
+    df: pandas.DataFrame
+        A pandas DataFrame containing data from pytest-benchmark.
+    params_name: str
+        The name of the pytest parameter column to split.
+    columns: list of str
+        If specified, the resulting columns will have the names in this list,
+        otherwise resulting columns will have the element number as a suffix to
+        the value of ``params_name``, such as ``params_name.0``,
+        ``params_name.1``, and so on.
+
+    Returns
+    -------
+    pandas.DataFrame
+        A pandas DataFrame containing additional columns for the parameters
+        split.
+
+    Examples
+    --------
+    >>> split_params_list(df, "params.shape")
+    >>> split_params_list(df,
+    >>>     "params.shape",
+    >>>     ["params.shape.0", "params.shape.1"])
+    >>> split_params_list(df, "params.shape", ["shape0", "shape1"])
+    """
     lst = df[params_name].to_list()
     lst = [[l] if not isinstance(l, list) else l for l in lst]
     ncols = max([len(l) for l in lst])
